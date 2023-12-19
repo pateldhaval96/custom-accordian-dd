@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.accordian-main {
+			border:1px solid black;
+			width: 50%;
+			margin: 20px auto;
+			padding: 20px;
+		}
+
+		.accordian-des {
+			padding-top: 10px;
+			display: none;
+		}
+
+		.accordian-heading span i {
+			font-size: 20px;
+			transition: 0.5s;
+		}
+
+		.accordian-heading {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.accordian-heading span {
+			position: relative;
+		}
+
+		.minus-icon {
+			position: absolute;
+			left: 45%;
+			top: 45%;
+			transform: translate(-50%,-50%) rotate(90deg);
+		}
+
+		.accordian-heading.active .minus-icon {
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="accordian-main">
+		<div class="accordian-heading">
+			<h1>this is heading</h1>
+			<span>
+				<i class="fa fa-minus" aria-hidden="true"></i>
+				<i class="fa fa-minus minus-icon" aria-hidden="true"></i>
+			</span>
+		</div>
+		<div class="accordian-des">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		</div>
+	</div>
+
+		<div class="accordian-main">
+		<div class="accordian-heading">
+			<h1>this is heading</h1>
+			<span>
+				<i class="fa fa-minus" aria-hidden="true"></i>
+				<i class="fa fa-minus minus-icon" aria-hidden="true"></i>
+			</span>
+		</div>
+		<div class="accordian-des">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		</div>
+	</div>
+
+
+	<div class="accordian-main">
+		<div class="accordian-heading">
+			<h1>this is heading</h1>
+			<span>
+				<i class="fa fa-minus" aria-hidden="true"></i>
+				<i class="fa fa-minus minus-icon" aria-hidden="true"></i>
+			</span>
+		</div>
+		<div class="accordian-des">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		</div>
+	</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".accordian-heading").click(function(){
+			$(".accordian-des").slideUp();
+			$(".accordian-heading").removeClass("active");
+			if($(this).parent(".accordian-main").find(".accordian-des").is(":visible")){
+				$(this).parent(".accordian-main").find(".accordian-des").slideUp();
+				$(this).addClass("active");			
+			}
+			else {
+				$(this).parent(".accordian-main").find(".accordian-des").slideDown();
+				$(this).addClass("active");
+			}
+		});
+	});
+</script>
